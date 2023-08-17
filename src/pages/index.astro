@@ -1,5 +1,5 @@
 ---
-import Indicator from "../components/Indicator.astro";
+import MainForm from "../components/MainForm";
 ---
 
 <!DOCTYPE html>
@@ -18,19 +18,7 @@ import Indicator from "../components/Indicator.astro";
     <meta name="generator" content={Astro.generator} />
     <title>GoITeens</title>
   </head>
-  <body class="py-6">
-    <div class="flex items-center gap-2">
-      <div class="flex flex-grow justify-center text-xl font-semibold">
-        LOGO
-      </div>
-      <Indicator class="bg-lime-600">Опис</Indicator>
-      <Indicator class="bg-cyan-600">Аналіз</Indicator>
-      <Indicator class="bg-blue-600">Стратегія</Indicator>
-      <Indicator class="bg-purple-600">Продукт</Indicator>
-      <Indicator class="bg-pink-600">Ресурси</Indicator>
-      <Indicator class="bg-orange-600">Індикація</Indicator>
-      <div class="flex-grow"></div>
-    </div>
-    <div></div>
+  <body>
+    <MainForm />
   </body>
 </html>
