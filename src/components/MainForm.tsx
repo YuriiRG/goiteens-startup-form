@@ -103,8 +103,9 @@ export default function MainForm() {
             <div>
               <input
                 id="email"
-                className="h-12 w-[36rem] rounded-xl border-2 border-gray-400 px-4 py-2 pr-36 focus:outline-none"
+                className="h-12 w-[36rem] rounded-xl border-2 border-gray-400 px-4 py-2 pr-36 focus:outline-none dark:border-gray-500 dark:bg-gray-800"
                 type="text"
+                required
               />
               <button className="-ml-32 h-12 w-32 rounded-xl border-2 border-green-500 font-semibold transition-all hover:border-gray-400 hover:bg-green-500 hover:text-white group-focus-within:border-gray-400 group-focus-within:bg-green-500 group-focus-within:text-white">
                 Надіслати
@@ -119,7 +120,7 @@ export default function MainForm() {
               <Select.Icon>▼</Select.Icon>
             </Select.Trigger>
             <Select.Portal>
-              <Select.Content className="select-none overflow-hidden rounded-xl border-2 border-gray-400 bg-white p-2">
+              <Select.Content className="select-none overflow-hidden rounded-xl border-2 border-gray-400 bg-white p-2 dark:bg-gray-800">
                 <Select.Viewport className="">
                   {dateTypes
                     .slice(0, dateTypes.length - 1)
@@ -127,14 +128,14 @@ export default function MainForm() {
                       <Select.Item
                         key={id}
                         value={id}
-                        className="border-b border-gray-300 focus:bg-gray-100 focus:outline-none"
+                        className="border-b border-gray-300 focus:bg-gray-100 focus:outline-none dark:focus:bg-gray-700"
                       >
                         <Select.ItemText>{text}</Select.ItemText>
                       </Select.Item>
                     ))}
                   <Select.Item
                     value={dateTypes[dateTypes.length - 1].id}
-                    className=" focus:bg-gray-100 focus:outline-none"
+                    className=" focus:bg-gray-100 focus:outline-none dark:focus:bg-gray-700"
                   >
                     <Select.ItemText>
                       {dateTypes[dateTypes.length - 1].text}

@@ -16,7 +16,7 @@ export default function Indicator({
       className={twMerge(
         "rounded-full px-4 py-1 text-center font-medium text-white",
         className,
-        id === focusedId ? "text-red bg-gray-300" : "",
+        id === focusedId ? "bg-gray-300 text-black" : "",
       )}
     >
       {children}
