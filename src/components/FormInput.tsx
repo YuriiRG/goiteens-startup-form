@@ -17,7 +17,7 @@ export default function FormInput({
           </label>
           <input
             id={id}
-            className="h-12 w-[32rem] rounded-xl border-2 border-gray-400 px-4 py-2 focus:border-gray-900 focus:outline-none"
+            className="h-12 w-[36rem] rounded-xl border-2 border-gray-400 px-4 py-2 focus:border-gray-900 focus:outline-none"
             type="text"
           />
         </div>
