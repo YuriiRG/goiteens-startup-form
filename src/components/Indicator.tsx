@@ -3,15 +3,20 @@ import { twMerge } from "tailwind-merge";
 export default function Indicator({
   className,
   children,
+  focusedId,
+  id,
 }: {
+  focusedId: string;
   className: string;
   children: ReactNode;
+  id: string;
 }) {
   return (
     <div
       className={twMerge(
         "rounded-full px-4 py-1 text-center font-medium text-white",
         className,
+        id === focusedId ? "text-red bg-gray-300" : "",
       )}
     >
       {children}

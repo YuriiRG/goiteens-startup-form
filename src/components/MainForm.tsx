@@ -1,3 +1,4 @@
+import { useState } from "react";
 import FormInput from "./FormInput";
 import Indicator from "./Indicator";
 import * as Select from "@radix-ui/react-select";
@@ -9,29 +10,92 @@ const dateTypes = [
 ];
 
 export default function MainForm() {
+  const [focusedInput, setFocusedInput] = useState("");
   return (
     <>
       <div className="flex items-center gap-2 py-6">
         <div className="flex flex-grow justify-center text-xl font-semibold">
           LOGO
         </div>
-        <Indicator className="bg-lime-600">Опис</Indicator>
-        <Indicator className="bg-cyan-600">Аналіз</Indicator>
-        <Indicator className="bg-blue-600">Стратегія</Indicator>
-        <Indicator className="bg-purple-600">Продукт</Indicator>
-        <Indicator className="bg-pink-600">Ресурси</Indicator>
-        <Indicator className="bg-orange-600">Індикація</Indicator>
+        <Indicator id="desc" focusedId={focusedInput} className="bg-lime-600">
+          Опис
+        </Indicator>
+        <Indicator
+          id="analysis"
+          focusedId={focusedInput}
+          className="bg-cyan-600"
+        >
+          Аналіз
+        </Indicator>
+        <Indicator
+          id="strategy"
+          focusedId={focusedInput}
+          className="bg-blue-600"
+        >
+          Стратегія
+        </Indicator>
+        <Indicator
+          id="product"
+          focusedId={focusedInput}
+          className="bg-purple-600"
+        >
+          Продукт
+        </Indicator>
+        <Indicator
+          id="resources"
+          focusedId={focusedInput}
+          className="bg-pink-600"
+        >
+          Ресурси
+        </Indicator>
+        <Indicator
+          id="indication"
+          focusedId={focusedInput}
+          className="bg-orange-600"
+        >
+          Індикація
+        </Indicator>
         <div className="flex-grow"></div>
       </div>
       <form className="flex">
         <div className="flex-grow"></div>
         <div className="flex flex-col gap-2">
-          <FormInput label="Опишіть вашу ідею в 2-3 реченнях" />
-          <FormInput label="Який найперспективніший напрямок дій?" />
-          <FormInput label="Що ви хочете реалізувати за найближчий період?" />
-          <FormInput label="Яку цінність і кому ви пропонуєте?" />
-          <FormInput label="Які ресурси вам для цього необхідні?" />
-          <FormInput label="Які показники вам необхідно контролювати для успіху?" />
+          <FormInput
+            focusedId={focusedInput}
+            onFocusChange={setFocusedInput}
+            id="desc"
+            label="Опишіть вашу ідею в 2-3 реченнях"
+          />
+          <FormInput
+            focusedId={focusedInput}
+            onFocusChange={setFocusedInput}
+            id="analysis"
+            label="Який найперспективніший напрямок дій?"
+          />
+          <FormInput
+            focusedId={focusedInput}
+            onFocusChange={setFocusedInput}
+            id="strategy"
+            label="Що ви хочете реалізувати за найближчий період?"
+          />
+          <FormInput
+            focusedId={focusedInput}
+            onFocusChange={setFocusedInput}
+            id="product"
+            label="Яку цінність і кому ви пропонуєте?"
+          />
+          <FormInput
+            focusedId={focusedInput}
+            onFocusChange={setFocusedInput}
+            id="resources"
+            label="Які ресурси вам для цього необхідні?"
+          />
+          <FormInput
+            focusedId={focusedInput}
+            onFocusChange={setFocusedInput}
+            id="indication"
+            label="Які показники вам необхідно контролювати для успіху?"
+          />
           <div className="group ml-14 flex flex-col">
             <label htmlFor="email" className="self-center font-medium">
               Залиште свою пошту для збереження даних і зворотнього звʼязку
@@ -61,6 +125,7 @@ export default function MainForm() {
                     .slice(0, dateTypes.length - 1)
                     .map(({ id, text }) => (
                       <Select.Item
+                        key={id}
                         value={id}
                         className="border-b border-gray-300 focus:bg-gray-100 focus:outline-none"
                       >
