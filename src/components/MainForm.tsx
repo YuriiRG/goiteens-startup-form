@@ -4,7 +4,7 @@ import Indicator from "./Indicator";
 import * as Select from "@radix-ui/react-select";
 
 const dateTypes = [
-  { id: "quater", text: "Квартал" },
+  { id: "quarter", text: "Квартал" },
   { id: "month", text: "Місяць" },
   { id: "week", text: "Тиждень" },
 ];
@@ -57,7 +57,17 @@ export default function MainForm() {
         </Indicator>
         <div className="flex-grow"></div>
       </div>
-      <form className="flex">
+      <form
+        className="flex"
+        onSubmit={(e) => {
+          e.preventDefault();
+          e.preventDefault();
+          // placeholder to sending to server
+          console.log(
+            Object.fromEntries(new FormData(e.currentTarget).entries()),
+          );
+        }}
+      >
         <div className="flex-grow"></div>
         <div className="flex flex-col gap-2">
           <FormInput
@@ -103,8 +113,9 @@ export default function MainForm() {
             <div>
               <input
                 id="email"
+                name="email"
                 className="h-12 w-[36rem] rounded-xl border-2 border-gray-400 px-4 py-2 pr-36 focus:outline-none dark:border-gray-500 dark:bg-gray-800"
-                type="text"
+                type="email"
                 required
               />
               <button className="-ml-32 h-12 w-32 rounded-xl border-2 border-green-500 font-semibold transition-all hover:border-gray-400 hover:bg-green-500 hover:text-white group-focus-within:border-gray-400 group-focus-within:bg-green-500 group-focus-within:text-white">
@@ -114,7 +125,7 @@ export default function MainForm() {
           </div>
         </div>
         <div className="flex w-0 flex-grow flex-col items-start justify-center pl-4">
-          <Select.Root defaultValue={dateTypes[0].id}>
+          <Select.Root defaultValue={dateTypes[0].id} required name="dateType">
             <Select.Trigger className="rounded-xl border-2 border-gray-400 p-1">
               <Select.Value />
               <Select.Icon>▼</Select.Icon>

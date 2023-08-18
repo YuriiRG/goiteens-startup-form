@@ -19,6 +19,7 @@ export default function FormInput({
           <input
             required
             id={id}
+            name={id}
             onFocus={() => onFocusChange(id)}
             onBlur={() => onFocusChange("")}
             className="peer h-12 w-[36rem] rounded-xl border-2 border-gray-400 px-4 py-2 focus:border-gray-900 focus:outline-none dark:border-gray-500 dark:bg-gray-800 dark:focus:border-gray-300"
