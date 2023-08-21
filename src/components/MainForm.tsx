@@ -131,7 +131,7 @@ export default function MainForm() {
               <Select.Icon>▼</Select.Icon>
             </Select.Trigger>
             <Select.Portal>
-              <Select.Content className="select-none overflow-hidden rounded-xl border-2 border-gray-400 bg-white p-2 dark:bg-gray-800">
+              <Select.Content className="select-none overflow-hidden rounded-xl border-2 border-gray-400 bg-white dark:bg-gray-800">
                 <Select.Viewport className="">
                   {dateTypes
                     .slice(0, dateTypes.length - 1)
@@ -139,14 +139,14 @@ export default function MainForm() {
                       <Select.Item
                         key={id}
                         value={id}
-                        className="border-b border-gray-300 focus:bg-gray-100 focus:outline-none dark:focus:bg-gray-700"
+                        className="border-b border-gray-300 px-2 py-1 focus:bg-gray-100 focus:outline-none dark:focus:bg-gray-700"
                       >
                         <Select.ItemText>{text}</Select.ItemText>
                       </Select.Item>
                     ))}
                   <Select.Item
                     value={dateTypes[dateTypes.length - 1].id}
-                    className=" focus:bg-gray-100 focus:outline-none dark:focus:bg-gray-700"
+                    className=" px-2 py-1 focus:bg-gray-100 focus:outline-none dark:focus:bg-gray-700"
                   >
                     <Select.ItemText>
                       {dateTypes[dateTypes.length - 1].text}
